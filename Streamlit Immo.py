@@ -10,6 +10,7 @@ import streamlit as st
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn import preprocessing
 
 df = pd.read_csv('/Users/nicol/Downloads/df_final.csv')
 
