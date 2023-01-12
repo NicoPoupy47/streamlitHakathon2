@@ -12,7 +12,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 
-df = pd.read_csv('/Users/nicol/Downloads/Hackathon2/df_final.csv')
+df = pd.read_csv('\Users\nicol\Downloads\Hackathon2\df_final.csv')
+# file = open(r'C:\path\to\your\filename.ext')
+
 
 # Image animée
 
