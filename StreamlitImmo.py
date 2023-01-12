@@ -48,11 +48,11 @@ df['predict_LR'] = model_LR.predict(X)
 st.title("Estimation de la valeur d'un bien immobilier")
 
 with st.form(key='Recommandation'):
-    crew = st.selectbox("Surface habitable ?", options=df['surface_reelle_bati'].unique())
-    pax = st.selectbox('Nombre de pièces ?', options=df['nombre_pieces_principales'].unique())
-    model = st.multiselect("Type de bien ?", options=df['type_local'].unique())
-    depart = st.multiselect("Code commune ?", options=df['code_commune'].unique())
-    operator = st.multiselect("Département ?", options=df['code_departement'].unique())
+    surface = st.selectbox("Surface habitable ?", options=df['surface_reelle_bati'].unique())
+    piece = st.selectbox('Nombre de pièces ?', options=df['nombre_pieces_principales'].unique())
+    bien = st.multiselect("Type de bien ?", options=df['type_local'].unique())
+    commune = st.multiselect("Code commune ?", options=df['code_commune'].unique())
+    departement = st.multiselect("Département ?", options=df['code_departement'].unique())
     submit = st.form_submit_button(label='Estimation')
 
 if submit:
@@ -71,7 +71,7 @@ if submit:
     #filt_operator = crash['Operator'] == ''.join(operator)
     #loc_test = crash.loc[filt_model, 'Operator_fac'].values[0]
 
-    my_data = np.array([crew, pax, model, depart, operator ]).reshape(1, 5)
+    my_data = np.array([surface, piece, bien, commune, departement ]).reshape(1, 5)
 
     st.success(f"Valeur estimée du bien immobilier : ",icon="✅")
     st.header(f"{''.join(model_LR.predict(my_data))}")
