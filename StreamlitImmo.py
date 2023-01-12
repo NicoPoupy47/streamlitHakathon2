@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 
 #file = open(r'C:/Users/nicol/Downloads/tableH2.csv')
-df = pd.read_csv('\Users\nicol\Downloads\tableH4.csv')
+df = pd.read_csv('/Users/nicol/Downloads/tableH4.csv')
 
 #df = pd.read_csv(file)
 
